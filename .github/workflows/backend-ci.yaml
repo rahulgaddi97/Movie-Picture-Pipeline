@@ -12,6 +12,7 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: starter/backend
@@ -37,7 +38,7 @@ jobs:
         run: pip install pipenv
 
       - name: Install dependencies
-        run: pipenv install
+        run: pipenv install --dev
 
       - name: Run lint
         run: pipenv run lint
@@ -45,6 +46,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: starter/backend
